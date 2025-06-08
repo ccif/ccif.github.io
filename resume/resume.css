@@ -1,0 +1,196 @@
+/* Resume CSS - Replicates LaTeX template styling */
+
+/* Hide pandoc-generated title and author */
+.title, .author {
+  display: none;
+}
+
+/* Page setup */
+html {
+  font-size: 11pt;
+  line-height: 1.2;
+}
+
+body {
+  font-family: "Charter", "Bitstream Charter", serif;
+  margin: 0.5in;
+  padding: 0;
+  background-color: white;
+  color: black;
+  text-align: left;
+  max-width: 8.5in;
+  min-height: 11in;
+}
+
+/* Remove default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Name styling - equivalent to \centerline{\Huge John Doe} */
+h1 {
+  font-size: 2.5em; /* Huge size */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5pt;
+  margin-top: 0;
+}
+
+/* Contact information - first paragraph after h1 */
+h1 + p {
+  text-align: center;
+  margin-bottom: 10pt;
+  font-size: 11pt;
+}
+
+h1 + p a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 + p a:hover {
+  text-decoration: underline;
+}
+
+/* Section headings - equivalent to \titleformat{\section} */
+h2 {
+  font-size: 1.2em; /* \large */
+  font-weight: bold;
+  margin-top: 18.5pt;
+  margin-bottom: 1pt;
+  border-bottom: 1px solid black;
+  padding-bottom: 1pt;
+}
+
+/* First section has less top margin */
+h2:first-of-type {
+  margin-top: 6.5pt;
+}
+
+/* Job entries with right-aligned dates */
+p:has(strong):has(.date) {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 9pt;
+}
+
+.date, .link {
+  font-weight: normal;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Skills section formatting */
+#skills + p strong {
+  font-weight: bold;
+}
+
+/* Bullet points - equivalent to itemize environment */
+ul {
+  list-style: none;
+  margin-left: 12pt;
+  margin-top: 7pt;
+  margin-bottom: 0;
+}
+
+li {
+  position: relative;
+  margin-bottom: -2pt;
+  line-height: 1.3;
+}
+
+/* Custom bullet points */
+li::before {
+  content: "•";
+  position: absolute;
+  left: -12pt;
+  font-size: 0.9em;
+  top: 0;
+}
+
+/* Bold formatting within bullet points */
+li strong {
+  font-weight: bold;
+}
+
+/* Links within bullet points */
+li a {
+  color: black;
+  text-decoration: underline;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+/* Remove old education and responsive styles that referenced removed classes */
+
+/* Spacing adjustments */
+.section-spacing {
+  margin-bottom: 6.5pt;
+}
+
+/* Negative spacing adjustments to match LaTeX */
+.tight-spacing {
+  margin-top: -18.5pt;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 0;
+}
+
+/* Special formatting for URLs */
+.url {
+  font-family: monospace;
+  word-break: break-all;
+}
+
+/* Print styles */
+@media print {
+  body {
+      margin: 0.5in;
+      font-size: 11pt;
+  }
+  
+  h2 {
+      page-break-after: avoid;
+  }
+  
+  .experience-entry, .project-entry {
+      page-break-inside: avoid;
+  }
+}
+
+/* Responsive adjustments for screen viewing */
+@media screen and (max-width: 8.5in) {
+  body {
+      margin: 0.25in;
+  }
+  
+  p:has(.date), p:has(.link) {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .date, .link {
+      margin-left: 0;
+      margin-top: 2pt;
+  }
+}
+
+/* Fallback fonts if Charter is not available */
+@font-face {
+  font-family: 'Charter';
+  src: local('Charter'), local('Bitstream Charter'), local('Charter Regular');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Alternative font stack */
+body {
+  font-family: "Charter", "Bitstream Charter", "Times New Roman", Times, serif;
+}
