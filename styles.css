@@ -1,0 +1,52 @@
+:root {
+  --bg: #fefefe;
+  --text: #111;
+  --link: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 700px;
+  margin: 10% auto 4rem;
+  padding: 0 1rem;
+  line-height: 1.7;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+a:hover {
+  border-color: #aaa;
+}
+
+p {
+  margin-bottom: 0.8rem;
+}
+
+footer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #555;
+} 
