@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: "XCharter", "Charter", serif;
+  font-family: "Source Serif 4", "Charter", "Bitstream Charter", serif;
   font-size: var(--font-size-base);
   line-height: 1.4;
   color: var(--text-color);
