@@ -1,196 +1,157 @@
-/* Resume CSS - Replicates LaTeX template styling */
-
-/* Hide pandoc-generated title and author */
-.title, .author {
-  display: none;
+/* Base styles */
+:root {
+  --text-color: #000;
+  --link-color: #0000EE;
+  --section-spacing: 0.5em;
+  --entry-spacing: 0.5em;
+  --font-size-base: 11pt;
+  --font-size-large: 1.5em;
+  --font-size-huge: 2em;
 }
 
-/* Page setup */
-html {
-  font-size: 11pt;
-  line-height: 1.2;
-}
-
-body {
-  font-family: "Charter", "Bitstream Charter", serif;
-  margin: 0.5in;
-  padding: 0;
-  background-color: white;
-  color: black;
-  text-align: left;
-  max-width: 8.5in;
-  min-height: 11in;
-}
-
-/* Remove default margins and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Name styling - equivalent to \centerline{\Huge John Doe} */
-h1 {
-  font-size: 2.5em; /* Huge size */
+body {
+  font-family: "XCharter", "Charter", serif;
+  font-size: var(--font-size-base);
+  line-height: 1.4;
+  color: var(--text-color);
+  max-width: 8.5in;
+  margin: 0.5in auto;
+  padding: 0 0.5in;
+}
+
+/* Resume container */
+.resume {
+  width: 100%;
+}
+
+/* Name */
+.name {
+  font-size: var(--font-size-huge);
   font-weight: bold;
   text-align: center;
-  margin-bottom: 5pt;
-  margin-top: 0;
+  margin-bottom: -0.2em;
 }
 
-/* Contact information - first paragraph after h1 */
-h1 + p {
+/* Contact information */
+.contact {
   text-align: center;
-  margin-bottom: 10pt;
-  font-size: 11pt;
+  margin-bottom: 0.7em;
 }
 
-h1 + p a {
-  color: black;
-  text-decoration: none;
+.contact-item {
+  display: inline-block;
 }
 
-h1 + p a:hover {
-  text-decoration: underline;
+.separator {
+  margin: 0 0.1em;
 }
 
-/* Section headings - equivalent to \titleformat{\section} */
-h2 {
-  font-size: 1.2em; /* \large */
+/* Sections */
+.section {
+  margin-bottom: var(--section-spacing);
+}
+
+.section-title {
+  font-size: var(--font-size-large);
   font-weight: bold;
-  margin-top: 18.5pt;
-  margin-bottom: 1pt;
-  border-bottom: 1px solid black;
-  padding-bottom: 1pt;
+  margin-bottom: 0.2em;
+  border-bottom: 1px solid var(--text-color);
 }
 
-/* First section has less top margin */
-h2:first-of-type {
-  margin-top: 6.5pt;
+/* Entries (Experience, Projects, Education) */
+.entry {
+  margin-bottom: var(--entry-spacing);
 }
 
-/* Job entries with right-aligned dates */
-p:has(strong):has(.date) {
+.entry-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 9pt;
+  margin-bottom: 0.2em;
 }
 
-.date, .link {
-  font-weight: normal;
+.entry-title-company {
+  flex: 1;
+  margin-right: 1em;
+}
+
+.entry-title {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.entry-company {
+  font-size: 1em;
+}
+
+.entry-dates,
+.entry-url {
+  font-size: 1em;
   white-space: nowrap;
-  margin-left: auto;
 }
 
-/* Skills section formatting */
-#skills + p strong {
+.entry-technologies {
+  font-style: italic;
+  margin-bottom: 0.2em;
+}
+
+.entry-degree {
+  margin-top: 0.2em;
+}
+
+/* Bullet points */
+.entry-bullets {
+  list-style-type: disc;
+  margin-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.entry-bullets li {
+  margin-bottom: 0.2em;
+}
+
+/* Skills section */
+.skills-list {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.skill-item {
+  margin-bottom: 0.2em;
+}
+
+.skill-category {
   font-weight: bold;
 }
 
-/* Bullet points - equivalent to itemize environment */
-ul {
-  list-style: none;
-  margin-left: 12pt;
-  margin-top: 7pt;
-  margin-bottom: 0;
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
 }
 
-li {
-  position: relative;
-  margin-bottom: -2pt;
-  line-height: 1.3;
-}
-
-/* Custom bullet points */
-li::before {
-  content: "•";
-  position: absolute;
-  left: -12pt;
-  font-size: 0.9em;
-  top: 0;
-}
-
-/* Bold formatting within bullet points */
-li strong {
-  font-weight: bold;
-}
-
-/* Links within bullet points */
-li a {
-  color: black;
+a:hover {
   text-decoration: underline;
-}
-
-li a:hover {
-  text-decoration: underline;
-}
-
-/* Remove old education and responsive styles that referenced removed classes */
-
-/* Spacing adjustments */
-.section-spacing {
-  margin-bottom: 6.5pt;
-}
-
-/* Negative spacing adjustments to match LaTeX */
-.tight-spacing {
-  margin-top: -18.5pt;
-}
-
-/* Paragraph spacing */
-p {
-  margin-bottom: 0;
-}
-
-/* Special formatting for URLs */
-.url {
-  font-family: monospace;
-  word-break: break-all;
 }
 
 /* Print styles */
 @media print {
   body {
-      margin: 0.5in;
-      font-size: 11pt;
+    margin: 0;
+    padding: 0.5in;
   }
-  
-  h2 {
-      page-break-after: avoid;
-  }
-  
-  .experience-entry, .project-entry {
-      page-break-inside: avoid;
-  }
-}
 
-/* Responsive adjustments for screen viewing */
-@media screen and (max-width: 8.5in) {
-  body {
-      margin: 0.25in;
+  .section {
+    page-break-inside: avoid;
   }
-  
-  p:has(.date), p:has(.link) {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-  
-  .date, .link {
-      margin-left: 0;
-      margin-top: 2pt;
-  }
-}
 
-/* Fallback fonts if Charter is not available */
-@font-face {
-  font-family: 'Charter';
-  src: local('Charter'), local('Bitstream Charter'), local('Charter Regular');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Alternative font stack */
-body {
-  font-family: "Charter", "Bitstream Charter", "Times New Roman", Times, serif;
-}
+  .entry {
+    page-break-inside: avoid;
+  }
+} 
