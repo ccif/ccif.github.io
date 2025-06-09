@@ -1,13 +1,18 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt]{article}
 
 % Essential packages
-\usepackage[margin=0.5in]{geometry}
-\usepackage{hyperref}
-\usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{xcolor}
-\usepackage{XCharter}
-\usepackage[T1]{fontenc}
+\usepackage[letterpaper,margin=0.5in]{geometry}  % set page size and margins
+\usepackage[hidelinks]{hyperref}                 % format hyperlinks
+\usepackage{enumitem}                            % enable lists for bullet points: itemize and \item
+\usepackage{titlesec}                            % enable section title customization
+\usepackage{XCharter}                            % set font to XCharter
+\usepackage[T1]{fontenc}                         % output encoding
+\usepackage[utf8]{inputenc}                      % input encoding
+\pagestyle{empty}                                % remove page numbers
+
+% ensure PDF output will be all-Unicode and machine-readable
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 % Custom commands
 \newcommand{\entrytitle}[1]{\vspace{0.5em}\textbf{#1}}
