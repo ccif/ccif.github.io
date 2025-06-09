@@ -1,61 +1,56 @@
 ---
-title: "Jason Chou Resume"
-author: "Jason Chou"
-date: "2025-06-08"
-lang: en-US
-papersize: letter
-geometry: margin=0.5in
-fontsize: 11pt
-mainfont: "Charter"
+name: "Jason Chou"
+contact:
+  email: "hello@jasonchou.dev"
+  portfolio: "jasonchou.dev"
+  github: "github.com/ccif"
+
+experience:
+  - title: "Senior Software Engineer"
+    company: "True AI"
+    location: "New York, NY"
+    dates: "June 2021 - March 2025"
+    technologies: ".NET Core, Kubernetes, Airflow, React"
+    bullets:
+      - "Contributed to the evolution of a multi-platform SaaS solution using enterprise technologies"
+
+  - title: "Software Engineer"
+    company: "True AI"
+    location: "New York, NY"
+    dates: "June 2019 - May 2021"
+    technologies: "C#, WPF"
+    bullets:
+      - "Built internal tooling suite with Python & React, saving 200+ hrs/month"
+      - "Helped refactor legacy monolith into modular services"
+      - "Led migration to AWS and modernized infrastructure from lift-and-shift approach"
+
+projects:
+  - title: "Piecewise"
+    url: "piecewise.fit"
+    technologies: "Dagster, FastAPI, Next.js"
+    bullets:
+      - "Designed backend architecture for item relationships using a graph database"
+      - "Working on a clean monorepo deployment with GitHub Actions + Pandoc"
+  
+  - title: "Project Title"
+    bullets:
+      - "Developed machine learning model achieving 95% accuracy for predictive analytics"
+      - "Created RESTful API with comprehensive documentation and automated testing suite"
+      
+skills:
+  - category: "Languages"
+    items: "C#, Python, TypeScript, Go, Bash"
+  - category: "Frameworks"
+    items: ".NET Core, React, Node.js, FastAPI"
+  - category: "Tools"
+    items: "AWS, Docker, SQL, Kubernetes"
+
+education:
+  - school: "City College of New York"
+    degree: "Bachelor of Engineering in Computer Engineering"
+    date: "Magna Cum Laude, June 2019"
 ---
 
-# Jason Chou
+# Resume
 
-[hello@jasonchou.dev](mailto:hello@jasonchou.dev) | [jasonchou.dev](https://jasonchou.dev) | [github.com/ccif](https://github.com/ccif)
-
-## Summary
-
-Creative and detail-oriented software engineer with a passion for building engaging products. Interested in human-centered systems, creative tools, and making tech feel personal.
-
-## Experience
-
-**Senior Software Engineer**, True AI — New York, NY <span class="date">June 2023 — March 2025</span>
-
-- Contributed to the evolution of a multi-platform SaaS solution using enterprise technologies: C# .NET Core, Kubernetes
-
-**Software Engineer**, True AI — New York, NY <span class="date">June 2021 — May 2023</span>
-
-- Built internal tooling suite with Python & React, saving 200+ hrs/month
-- Helped refactor legacy monolith into modular services
-- Led migration to AWS and modernized infrastructure from lift-and-shift approach
-
-## Projects
-
-**Piecewise** (in progress) <span class="date">github.com/ccif/piecewise</span>
-
-*Closet-sharing app to swap and explore other people's wardrobes.*
-
-- Designed backend architecture for item relationships using a graph database
-- Working on a clean monorepo deployment with GitHub Actions + Pandoc
-
-**Audio Space Explorer** <span class="date">github.com/ccif/audio-explorer</span>
-
-*A tool for capturing and reapplying real-world acoustic signatures.*
-
-- Built prototype using WebAssembly and convolution reverb techniques
-
-## Skills
-
-**Languages:** C#, Python, TypeScript, Go, Bash
-
-**Frameworks:** .NET Core, React, Node.js, FastAPI
-
-**Tools:** Docker, AWS (EC2, Lambda), SQL, Kubernetes, Pandoc
-
-## Education
-
-**City College of New York** — BS in Computer Engineering <span class="date">June 2019</span>
-
-*Magna Cum Laude*
-
-- Coursework: computer vision, embedded wifi
+This is a placeholder for any additional content you might want to add after the YAML front matter.

@@ -1,0 +1,83 @@
+\documentclass[11pt,a4paper]{article}
+
+% Essential packages
+\usepackage[margin=0.5in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+
+% Custom commands
+\newcommand{\name}[1]{\begin{center}\Huge\textbf{#1}\end{center}}
+\newcommand{\contact}[1]{\begin{center}#1\end{center}\vspace{0.5em}}
+\newcommand{\sectiontitle}[1]{\vspace{1em}\noindent\textbf{\large #1}\vspace{0.5em}\hrule\vspace{0.5em}}
+
+% Title formatting
+\titleformat{\section}{\Large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% List settings
+\setlist[itemize]{leftmargin=*,nosep}
+\setlist[enumerate]{leftmargin=*,nosep}
+
+% Document structure
+\begin{document}
+
+% Name
+\name{$name$}
+
+% Contact information
+\contact{
+    $for(contact)$
+    $contact.email$ \quad
+    $contact.portfolio$ \quad
+    $contact.github$
+    $endfor$
+}
+
+% Experience
+\sectiontitle{Experience}
+$for(experience)$
+\textbf{$experience.title$} at \textbf{$experience.company$} \hfill $experience.location$ \\
+$experience.dates$ \hfill \textit{$experience.technologies$}
+\begin{itemize}
+$for(experience.bullets)$
+    \item $experience.bullets$
+$endfor$
+\end{itemize}
+$endfor$
+
+% Projects
+\sectiontitle{Projects}
+$for(projects)$
+\textbf{$projects.title$}$if(projects.url)$ \hfill $projects.url$$endif$ \\
+$if(projects.technologies)$\textit{$projects.technologies$}$endif$
+\begin{itemize}
+$for(projects.bullets)$
+    \item $projects.bullets$
+$endfor$
+\end{itemize}
+$endfor$
+
+% Skills
+\sectiontitle{Skills}
+$for(skills)$
+\textbf{$skills.category$:} $skills.items$ \\
+$endfor$
+
+% Education
+\sectiontitle{Education}
+$for(education)$
+\textbf{$education.school$} \\
+$education.degree$ \hfill $education.date$
+$endfor$
+
+\end{document}
