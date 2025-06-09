@@ -18,7 +18,7 @@ experience:
     company: "True AI"
     location: "New York, NY"
     dates: "June 2019 - May 2021"
-    technologies: "C#, WPF"
+    technologies: "C#, WPF, Python"
     bullets:
       - "Built internal tooling suite with Python & React, saving 200+ hrs/month"
       - "Helped refactor legacy monolith into modular services"
@@ -43,7 +43,7 @@ skills:
   - category: "Frameworks"
     items: ".NET Core, React, Node.js, FastAPI"
   - category: "Tools"
-    items: "AWS, Docker, SQL, Kubernetes"
+    items: "AWS, Docker, SQL, Kubernetes, Helm"
 
 education:
   - school: "City College of New York"
