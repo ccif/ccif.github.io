@@ -1,22 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jason Chou - Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="resume.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <a href="/" class="home-btn" title="Home"><i class="fas fa-arrow-left"></i></a>
-            <a href="/resume/resume.pdf" class="download-btn" download title="Download Resume">
-                <i class="fas fa-download"></i>
-            </a>
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="home-btn" title="Home"><i class="fas fa-arrow-left"></i></a>
+      <div class="header-content">
+        <!-- Name -->
+        <h1 class="name"><b>Jason Chou</b></h1>
+        <!-- Contact Information -->
+        <div class="contact">
+                    <span class="contact-item">hello@jasonchou.dev</span>
+          <span class="contact-item">jasonchou.dev</span>
+          <span class="contact-item">github.com/ccif</span>
+                  </div>
+      </div>
+      <a href="/resume/resume.pdf" class="download-btn" download title="Download Resume">
+        <i class="fas fa-download"></i>
+      </a>
+    </div>
+  </header>
+  <div class="resume">
+    <!-- Experience -->
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+            <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title-company">
+            <span class="entry-title">Senior Software Engineer</span><span class="entry-company">, True AI</span>
+          </div>
+          <span class="entry-dates">June 2021 - March 2025</span>
         </div>
-    </header>
-    <iframe src="resume.html" title="Resume"></iframe>
+        <div class="entry-technologies">.NET Core, Kubernetes, Airflow, React</div>
+        <ul class="entry-bullets">
+                    <li>Contributed to the evolution of a multi-platform SaaS solution using enterprise technologies</li>
+                  </ul>
+      </div>
+            <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title-company">
+            <span class="entry-title">Software Engineer</span><span class="entry-company">, True AI</span>
+          </div>
+          <span class="entry-dates">August 2019 - May 2021</span>
+        </div>
+        <div class="entry-technologies">C#, AWS, Kubernetes, React, .NET Core</div>
+        <ul class="entry-bullets">
+                    <li>Built internal tooling suite with Python &amp; React, saving 200+ hrs/month</li>
+                    <li>Helped refactor legacy monolith into modular services</li>
+                    <li>Led migration to AWS and modernized infrastructure from lift-and-shift approach</li>
+                  </ul>
+      </div>
+            <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title-company">
+            <span class="entry-title">Software Engineer Intern</span><span class="entry-company">, True AI</span>
+          </div>
+          <span class="entry-dates">June 2019 - August 2019</span>
+        </div>
+        <div class="entry-technologies">C#, WPF</div>
+        <ul class="entry-bullets">
+                    <li>Built internal tooling suite with Python &amp; React, saving 200+ hrs/month</li>
+                    <li>Helped refactor legacy monolith into modular services</li>
+                    <li>Led migration to AWS and modernized infrastructure from lift-and-shift approach</li>
+                  </ul>
+      </div>
+            <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title-company">
+            <span class="entry-title">Undergraduate Student Researcher</span><span class="entry-company">, Aquasim</span>
+          </div>
+          <span class="entry-dates">April 2018 - March 2019</span>
+        </div>
+        <div class="entry-technologies">C++, ns-3, tcpdump, Python</div>
+        <ul class="entry-bullets">
+                    <li>Implemented a multi-channel MAC topology using ns-3, a C++ based network simulator.</li>
+                    <li>Conducted network traffic analysis using tcpdump and Python.</li>
+                    <li>The aim of the project is to find the optimal parameter settings such as message length, transmission power, modulation power, and baud rate in order to improve the performance of wireless communication in the underwater environment.</li>
+                    <li>Used two acoustic modems to send/receive messages under water utilizing various baud rates.</li>
+                    <li>Wrote a C program to log critical information of sent/received messages in order to perform data analysis.</li>
+                    <li>Wrote various scripts using command line utilities such as Bash (Unix shell), AWK, and Sed in order to process the collected data.</li>
+                  </ul>
+      </div>
+          </section>
+
+    <!-- Projects -->
+    <section class="section">
+      <h2 class="section-title">Projects</h2>
+            <div class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">Piecewise</h3>
+                    <span class="entry-url">piecewise.fit</span>
+                  </div>
+                <div class="entry-technologies">Dagster, FastAPI, Next.js</div>
+                <ul class="entry-bullets">
+                    <li>Designed backend architecture for item relationships using a graph database</li>
+                    <li>Working on a clean monorepo deployment with GitHub Actions + Pandoc</li>
+                  </ul>
+      </div>
+            <div class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">Lip Reading Model Optimization</h3>
+                    <span class="entry-url">github.com/repo</span>
+                  </div>
+                <div class="entry-technologies">Python, Keras</div>
+                <ul class="entry-bullets">
+                    <li>Optimized LipNet, a model written in Keras with a TensorFlow back-end, by implementing a novel method of curriculum training that speeds up convergence</li>
+                    <li>Streamlined the interface for training different video formats and deployed it to Google Cloud Platform for training and predicting.</li>
+                  </ul>
+      </div>
+          </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <ul class="skills-list">
+                <li class="skill-item">
+          <span class="skill-category">Languages:</span>
+          <span class="skill-items">C#, Python, TypeScript, Go, Bash</span>
+        </li>
+                <li class="skill-item">
+          <span class="skill-category">Frameworks:</span>
+          <span class="skill-items">.NET Core, React, Node.js, FastAPI</span>
+        </li>
+                <li class="skill-item">
+          <span class="skill-category">Tools:</span>
+          <span class="skill-items">AWS, Docker, SQL, Kubernetes, Helm</span>
+        </li>
+              </ul>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+            <div class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">City College of New York</h3>
+          <span class="entry-dates">Magna Cum Laude, May 2019</span>
+        </div>
+        <div class="entry-degree">Bachelor of Engineering in Computer Engineering</div>
+      </div>
+          </section>
+  </div>
 </body>
-</html>
+</html> 

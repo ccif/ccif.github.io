@@ -4,23 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>$name$ - Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,700;1,400;1,700&display=swap">
   <link rel="stylesheet" href="resume.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <div class="resume">
-    <!-- Name -->
-    <h1 class="name"><b>$name$</b></h1>
-
-    <!-- Contact Information -->
-    <div class="contact">
-      $for(contact)$
-      <span class="contact-item">$contact.email$</span>
-      <span class="contact-item">$contact.portfolio$</span>
-      <span class="contact-item">$contact.github$</span>
-      $endfor$
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="home-btn" title="Home"><i class="fas fa-arrow-left"></i></a>
+      <div class="header-content">
+        <!-- Name -->
+        <h1 class="name"><b>$name$</b></h1>
+        <!-- Contact Information -->
+        <div class="contact">
+          $for(contact)$
+          <span class="contact-item">$contact.email$</span>
+          <span class="contact-item">$contact.portfolio$</span>
+          <span class="contact-item">$contact.github$</span>
+          $endfor$
+        </div>
+      </div>
+      <a href="/resume/resume.pdf" class="download-btn" download title="Download Resume">
+        <i class="fas fa-download"></i>
+      </a>
     </div>
-
+  </header>
+  <div class="resume">
     <!-- Experience -->
     <section class="section">
       <h2 class="section-title">Experience</h2>
