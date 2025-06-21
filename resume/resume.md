@@ -68,4 +68,3 @@ education:
 
 # Resume
 
-This is a placeholder for any additional content you might want to add after the YAML front matter.
