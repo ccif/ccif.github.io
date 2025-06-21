@@ -5,7 +5,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 MD_PATH="$PROJECT_ROOT/src/content/resume/resume.md"
-PDF_OUT="$PROJECT_ROOT/public/resume.pdf"
+PDF_OUT="$PROJECT_ROOT/public/jason-chou-resume.pdf"
 TEMPLATE="$PROJECT_ROOT/templates/resume.pandoc.tex"
 
 # Basic PDF build with LaTeX
