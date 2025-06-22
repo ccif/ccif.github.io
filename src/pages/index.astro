@@ -4,18 +4,14 @@ import Resume from '@components/resume.astro';
 ---
 
 <Layout>
-	<header>
-    <h1><b>Jason Chou</b></h1>
-    <p><i class="fas fa-city"></i> NYC</p>
-  </header>
-  <main>
-    <p>Hi! I'm a software engineer currently building <a href="https://piecewise.fit">Piecewise</a>, a closet app designed around swapping clothes with others.</p>
-    <p>Previously, I worked as a software engineer at <a href="https://www.true.ai">True AI</a> where I focused on scaling their ML automation platform.</p>
-    <p>I hold a Bachelor's in <a href="https://www.ccny.cuny.edu/compeng">Computer Engineering</a> from the City College of New York.</p>
-    <p>When I'm not coding, I'm probably either bouldering in Chelsea, poring over the pictures in Tufte, or attempting to variegate my Caladiums.</p>
-    <p>You can reach me at <a href="mailto:json.chou@gmail.com">me@jasonchou.dev</a>.</p>
-    <p>Here's my <a href="/resume/">resume</a>.</p>
+  <main class="max-w-3xl mx-auto p-8">
+    <article class="prose max-w-none my-24">
+      <h1>Jason Chou</h1>
+      <p>Hi! I'm a software engineer currently building <a href="https://piecewise.fit">Piecewise</a>, a closet app designed around swapping clothes with others.</p>
+      <p>When I'm not coding, I'm probably either bouldering in Chelsea, poring over the pictures in Tufte, or attempting to variegate my Caladiums.</p>
+      <p>You can reach me at <a href="mailto:json.chou@gmail.com">me@jasonchou.dev</a>.</p>
+      <Resume />
+    </article>
   </main>
-  <Resume />
   <footer>
 </Layout>

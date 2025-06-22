@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
-import fs from 'fs';
 import { exec } from 'child_process';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://ccif.github.io',
   vite: {
     plugins: [
+      tailwindcss(),
       {
         name: 'pandoc-resume-watcher',
         configureServer(server) {
