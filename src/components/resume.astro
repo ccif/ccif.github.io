@@ -11,102 +11,71 @@ if (!resumeData) {
 const { name, contact, experience, projects, skills, education } = resumeData;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{name} Resume</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-  <link rel="stylesheet" href="/resume/resume.css">
-</head>
-<body>
-  <header class="header">
-    <div class="header-container">
-      <a href="/" class="home-btn" title="Home"><i class="fas fa-arrow-left"></i></a>
-      <div class="header-content">
-        <!-- Name -->
-        <h1 class="name"><b>{name}</b></h1>
-        <!-- Contact Information -->
-        <div class="contact">
-          <span class="contact-item">{contact.email}</span>
-          <span class="contact-item">{contact.portfolio}</span>
-          <span class="contact-item">{contact.github}</span>
+<div class="resume">
+  <!-- Experience -->
+  <section class="section">
+    <h2 class="section-title">Experience</h2>
+    {experience.map((exp: any) => (
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title-company">
+            <span class="entry-title">{exp.title}</span><span class="entry-company">, {exp.company}</span>
+          </div>
+          <span class="entry-dates">{exp.dates}</span>
         </div>
+        {exp.technologies && <div class="entry-technologies">{exp.technologies}</div>}
+        <ul class="entry-bullets">
+          {exp.bullets.map((bullet: string) => (
+            <li>{bullet}</li>
+          ))}
+        </ul>
       </div>
-      <a href="/jason-chou-resume.pdf" class="download-btn" download title="Download Resume">
-        <i class="fas fa-download"></i>
-      </a>
-    </div>
-  </header>
-  <div class="resume">
-    <!-- Experience -->
-    <section class="section">
-      <h2 class="section-title">Experience</h2>
-      {experience.map((exp: any) => (
-        <div class="entry">
-          <div class="entry-header">
-            <div class="entry-title-company">
-              <span class="entry-title">{exp.title}</span><span class="entry-company">, {exp.company}</span>
-            </div>
-            <span class="entry-dates">{exp.dates}</span>
-          </div>
-          {exp.technologies && <div class="entry-technologies">{exp.technologies}</div>}
-          <ul class="entry-bullets">
-            {exp.bullets.map((bullet: string) => (
-              <li>{bullet}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </section>
+    ))}
+  </section>
 
-    <!-- Projects -->
-    <section class="section">
-      <h2 class="section-title">Projects</h2>
-      {projects.map((project: any) => (
-        <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">{project.title}</h3>
-            {project.url && <span class="entry-url">{project.url}</span>}
-          </div>
-          {project.technologies && <div class="entry-technologies">{project.technologies}</div>}
-          <ul class="entry-bullets">
-            {project.bullets.map((bullet: string) => (
-              <li>{bullet}</li>
-            ))}
-          </ul>
+  <!-- Projects -->
+  <section class="section">
+    <h2 class="section-title">Projects</h2>
+    {projects.map((project: any) => (
+      <div class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">{project.title}</h3>
+          {project.url && <span class="entry-url">{project.url}</span>}
         </div>
+        {project.technologies && <div class="entry-technologies">{project.technologies}</div>}
+        <ul class="entry-bullets">
+          {project.bullets.map((bullet: string) => (
+            <li>{bullet}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <!-- Skills -->
+  <section class="section">
+    <h2 class="section-title">Skills</h2>
+    <ul class="skills-list">
+      {skills.map((skill: any) => (
+        <li class="skill-item">
+          <span class="skill-category">{skill.category}:</span>
+          <span class="skill-items">{skill.items}</span>
+        </li>
       ))}
-    </section>
+    </ul>
+  </section>
 
-    <!-- Skills -->
-    <section class="section">
-      <h2 class="section-title">Skills</h2>
-      <ul class="skills-list">
-        {skills.map((skill: any) => (
-          <li class="skill-item">
-            <span class="skill-category">{skill.category}:</span>
-            <span class="skill-items">{skill.items}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <!-- Education -->
-    <section class="section">
-      <h2 class="section-title">Education</h2>
-      {education.map((edu: any) => (
-        <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">{edu.school}</h3>
-            <span class="entry-dates">{edu.date}</span>
-          </div>
-          <div class="entry-degree">{edu.degree}</div>
+  <!-- Education -->
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    {education.map((edu: any) => (
+      <div class="entry">
+        <div class="entry-header">
+          <h3 class="entry-title">{edu.school}</h3>
+          <span class="entry-dates">{edu.date}</span>
         </div>
-      ))}
-    </section>
-  </div>
-</body>
-</html>
+        <div class="entry-degree">{edu.degree}</div>
+      </div>
+    ))}
+  </section>
+</div>
