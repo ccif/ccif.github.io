@@ -10,7 +10,7 @@ experience:
     company: "True AI"
     location: "New York, NY"
     dates: "June 2021 – March 2025"
-    # technologies: ".NET Core, Kubernetes, Airflow, React, SQL"
+    technologies: ".NET Core, Kubernetes, Airflow, React, SQL"
     bullets:
       - "Architected a stateless, queue-based scaling solution that increased document processing capacity by 100x, preventing system standstills from complex SQL deadlocks and retaining key enterprise contracts."
       - "Containerized legacy Windows components to Linux using Docker, Kubernetes, and Helm, improving CI/CD flexibility and scalability."
@@ -22,7 +22,7 @@ experience:
     company: "True AI"
     location: "New York, NY"
     dates: "June 2019 – May 2021"
-    # technologies: "C#, AWS, Kubernetes, React, .NET Core"
+    technologies: "C#, AWS, Kubernetes, React, .NET Core"
     bullets:
       - "Spearheaded lift-and-shift migration to AWS (EC2, RDS, Lambda) and Azure, improving system availability and disaster recovery capabilities while coordinating cross-platform migration strategy and implementation."
       - "Led UI modernization initiative to replace desktop applications with a React-based web solution, eliminating per-machine installations and scaling concurrent users per client."
@@ -63,7 +63,8 @@ skills:
 education:
   - school: "City College of New York"
     degree: "Bachelor of Engineering in Computer Engineering"
-    date: "Magna Cum Laude, May 2019"
+    date: "May 2019"
+    honors: "Magna Cum Laude"
 ---
 
 # Resume
