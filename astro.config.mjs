@@ -8,7 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindcss(),
-      compress(),
       {
         name: 'pandoc-resume-watcher',
         configureServer(server) {
@@ -29,5 +28,7 @@ export default defineConfig({
         }
       }
     ]
-  }
+  },
+
+  integrations: [compress()]
 });
