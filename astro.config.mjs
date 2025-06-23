@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
 import { exec } from 'child_process';
 import tailwindcss from '@tailwindcss/vite';
+import htmlMinify from 'vite-plugin-html-minify';
 
 export default defineConfig({
   site: 'https://ccif.github.io',
   vite: {
     plugins: [
       tailwindcss(),
+      htmlMinify(),
       {
         name: 'pandoc-resume-watcher',
         configureServer(server) {
