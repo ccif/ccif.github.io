@@ -1,3 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Source Sans 3", sans-serif;
+  --font-serif: "Source Serif 4", serif;
+}
