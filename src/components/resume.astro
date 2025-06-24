@@ -12,42 +12,54 @@ if (!resumeData) {
 const { name, contact, experience, projects, skills, education } = resumeData;
 ---
 
-<ul class="timeline timeline-vertical timeline-compact timeline-snap-icon p-4">
-  {experience.map((exp: any, index: number) => (
-    <li>
-      {index > 0 && <hr />}
-      <div class="timeline-start font-mono text-sm ml-2">
-        <time>{exp.dates}</time>
-      </div>
-      <div class="timeline-middle">
-        <Icon name="solar:suitcase-line-duotone" class="h-5 w-5" />
-      </div>
-      <div class="timeline-end">
-        <div class="space-y-1 pt-2 pl-2 pr-2">
-          <div class="font-bold">{exp.title}</div>
-          <div class="inline-flex items-center space-x-1 mr-1">
-            <Icon name="solar:buildings-line-duotone" class="h-5 w-5" />
-            <span class="text-sm">{exp.company}</span>
-          </div>
-          <div class="inline-flex items-center space-x-1">
-            <Icon name="solar:point-on-map-line-duotone" class="h-5 w-5" />
-            <span class="text-sm">{exp.location}</span>
-          </div>
+<div class="relative border-1 border-gray-200 rounded-lg">
+  <div class="absolute top-5 right-5 z-10">
+    <a 
+      href="/jason-chou-resume.pdf" 
+      download="jason-chou-resume.pdf"
+      class="btn btn-square"
+    >
+      <Icon name="solar:download-minimalistic-line-duotone" class="h-5 w-5" />
+    </a>
+  </div>
+
+  <ul class="timeline timeline-vertical timeline-compact timeline-snap-icon p-4">
+    {experience.map((exp: any, index: number) => (
+      <li>
+        {index > 0 && <hr />}
+        <div class="timeline-start font-mono text-sm ml-2">
+          <time>{exp.dates}</time>
         </div>
-        <ul class="space-y-2 p-2">
-          {exp.bullets.slice(0, 2).map((bullet: string) => (
-            <li>{bullet}</li>
-          ))}
-        </ul>
-      </div>
+        <div class="timeline-middle">
+          <Icon name="solar:suitcase-line-duotone" class="h-5 w-5" />
+        </div>
+        <div class="timeline-end">
+          <div class="space-y-1 pt-2 pl-2 pr-2">
+            <div class="font-bold">{exp.title}</div>
+            <div class="inline-flex items-center space-x-1 mr-1">
+              <Icon name="solar:buildings-line-duotone" class="h-5 w-5" />
+              <span class="text-sm">{exp.company}</span>
+            </div>
+            <div class="inline-flex items-center space-x-1">
+              <Icon name="solar:point-on-map-line-duotone" class="h-5 w-5" />
+              <span class="text-sm">{exp.location}</span>
+            </div>
+          </div>
+          <ul class="space-y-2 p-2">
+            {exp.bullets.slice(0, 2).map((bullet: string) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+        </div>
+        <hr />
+      </li>
+    ))}
+    <li>
       <hr />
+      <div class="timeline-middle"><Icon name="solar:menu-dots-linear" class="h-5 w-5 text-gray-300" stroke-width="1.5" /></div>
     </li>
-  ))}
-  <li>
-    <hr />
-    <div class="timeline-middle"><Icon name="solar:menu-dots-linear" class="h-5 w-5 text-gray-300" stroke-width="1.5" /></div>
-  </li>
-</ul>
+  </ul>
+</div>
 
 <style>
   li {
