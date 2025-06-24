@@ -6,18 +6,18 @@ import { Icon } from 'astro-icon/components';
 
 <Layout>
   <main class="max-w-3xl mx-auto p-8">
-    <article class="prose text-base-content max-w-none mt-24 mb-8 font-serif">
-      <header>
-        <h3 class="mb-0">Jason Chou</h3>
+    <article class="prose text-base-content max-w-none mt-16 mb-8 font-serif">
+      <header class="relative">
+        <h1 class="mb-0">Jason Chou</h1>
         <div class="flex justify-between mb-4">
           <div class="inline-flex items-center space-x-1">
             <Icon name="solar:mailbox-linear" class="h-5 w-5" />
             <span class="font-mono text-sm">me@jasonchou.dev</span>
           </div>
-          <div class="flex items-center space-x-1 justify-end">
-            <a href="https://www.github.com/ccif/"><Icon name="streamline-logos:github-logo-2-block" class="h-5 w-5" /></a>
-            <a href="https://www.linkedin.com/in/jason-chou-b8690917a/"><Icon name="streamline-logos:linkedin-logo-block" class="h-5 w-5" /></a>
-          </div>
+        </div>
+        <div class="absolute right-0 bottom-0 flex items-center space-x-1">
+          <a href="https://www.github.com/ccif/"><Icon name="streamline-logos:github-logo-2-block" class="h-7 w-7" /></a>
+          <a href="https://www.linkedin.com/in/jason-chou-b8690917a/"><Icon name="streamline-logos:linkedin-logo-block" class="h-7 w-7" /></a>
         </div>
       </header>
       <p>Hi! I'm a software engineer currently building <a href="https://piecewise.fit">Piecewise</a>, a closet app designed around swapping clothes with others.</p>
