@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 
 const resumeEntries = await getCollection('resume');
 const resumeData = resumeEntries[0]?.data;
@@ -11,71 +12,48 @@ if (!resumeData) {
 const { name, contact, experience, projects, skills, education } = resumeData;
 ---
 
-<div class="resume">
-  <!-- Experience -->
-  <section class="section">
-    <h2 class="section-title">Experience</h2>
-    {experience.map((exp: any) => (
-      <div class="entry">
-        <div class="entry-header">
-          <div class="entry-title-company">
-            <span class="entry-title">{exp.title}</span><span class="entry-company">, {exp.company}</span>
-          </div>
-          <span class="entry-dates">{exp.dates}</span>
-        </div>
-        {exp.technologies && <div class="entry-technologies">{exp.technologies}</div>}
-        <ul class="entry-bullets">
-          {exp.bullets.map((bullet: string) => (
+<ul class="timeline timeline-vertical timeline-compact timeline-snap-icon p-4">
+  {experience.map((exp: any, index: number) => (
+    <li>
+      {index > 0 && <hr />}
+      <div class="timeline-start font-mono text-sm pl-1">
+        <time>{exp.dates.split(' – ')[0]}</time>
+      </div>
+      <div class="timeline-middle">
+        <Icon name="solar:suitcase-line-duotone" class="h-5 w-5" />
+      </div>
+      <div class="timeline-end">
+        <div class="flex flex-col space-y-1 p-2">
+        <time class="font-bold">{exp.title}</time>
+        <span class="inline-flex items-center space-x-1">
+          <Icon name="solar:buildings-line-duotone" class="h-5 w-5" />
+          {exp.company}
+        </span>
+        <span class="inline-flex items-center space-x-1">
+          <Icon name="solar:point-on-map-line-duotone" class="h-5 w-5" />
+          {exp.location}
+        </span></div>
+        <ul class="space-y-2 p-2">
+          {exp.bullets.slice(0, 2).map((bullet: string) => (
             <li>{bullet}</li>
           ))}
         </ul>
       </div>
-    ))}
-  </section>
+      <hr />
+    </li>
+  ))}
+</ul>
 
-  <!-- Projects -->
-  <section class="section">
-    <h2 class="section-title">Projects</h2>
-    {projects.map((project: any) => (
-      <div class="entry">
-        <div class="entry-header">
-          <h3 class="entry-title">{project.title}</h3>
-          {project.url && <span class="entry-url">{project.url}</span>}
-        </div>
-        {project.technologies && <div class="entry-technologies">{project.technologies}</div>}
-        <ul class="entry-bullets">
-          {project.bullets.map((bullet: string) => (
-            <li>{bullet}</li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </section>
+<style>
+  li {
+    --timeline-col-start: auto;
+  }
 
-  <!-- Skills -->
-  <section class="section">
-    <h2 class="section-title">Skills</h2>
-    <ul class="skills-list">
-      {skills.map((skill: any) => (
-        <li class="skill-item">
-          <span class="skill-category">{skill.category}:</span>
-          <span class="skill-items">{skill.items}</span>
-        </li>
-      ))}
-    </ul>
-  </section>
+  .timeline-start {
+    grid-row: 2;
+  }
 
-  <!-- Education -->
-  <section class="section">
-    <h2 class="section-title">Education</h2>
-    {education.map((edu: any) => (
-      <div class="entry">
-        <div class="entry-header">
-          <h3 class="entry-title">{edu.school}</h3>
-          <span class="entry-dates">{edu.date}</span>
-        </div>
-        <div class="entry-degree">{edu.degree}</div>
-      </div>
-    ))}
-  </section>
-</div>
+  .timeline-end {
+    grid-row: 3;
+  }
+</style>
