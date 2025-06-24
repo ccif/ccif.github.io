@@ -9,8 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/source-sans-3": "^5.2.8",
-    "@fontsource/source-serif-4": "^5.2.8",
     "@iconify-json/solar": "^1.2.2",
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.10.0",

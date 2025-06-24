@@ -2,7 +2,7 @@
 @plugin "daisyui";
 @plugin "@tailwindcss/typography";
 
-@theme {
-  --font-sans: "Source Sans 3", sans-serif;
-  --font-serif: "Source Serif 4", serif;
+@theme inline {
+  --font-sans: var(--font-source-sans-3), sans-serif;
+  --font-serif: var(--font-source-serif-4), serif;
 }

@@ -1,7 +1,6 @@
 ---
 import '@assets/app.css';
-import '@fontsource/source-serif-4/400.css';
-import '@fontsource/source-sans-3/400.css';
+import { Font } from 'astro:assets';
 ---
 
 <!doctype html>
@@ -10,8 +9,8 @@ import '@fontsource/source-sans-3/400.css';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href="/fonts/source-serif-4/files/source-serif-4-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/source-sans-3/files/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+		<Font cssVariable="--font-source-serif-4" preload />
+		<Font cssVariable="--font-source-sans-3" preload />
 		<meta name="generator" content={Astro.generator} />
 		<title>jchou</title>
 	</head>

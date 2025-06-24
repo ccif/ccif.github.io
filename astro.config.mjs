@@ -1,8 +1,7 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import { exec } from 'child_process';
 import tailwindcss from '@tailwindcss/vite';
 import compress from 'astro-compress';
-
 import icon from 'astro-icon';
 
 export default defineConfig({
@@ -31,6 +30,22 @@ export default defineConfig({
       }
     ]
   },
-
+  experimental: {
+    fonts: [{
+      name: 'Source Sans 3',
+      cssVariable: '--font-source-sans-3',
+      provider: fontProviders.fontsource(),
+      weights: [400],
+      styles: ['normal'],
+      subsets: ['latin'],
+    }, {
+      name: 'Source Serif 4',
+      cssVariable: '--font-source-serif-4',
+      provider: fontProviders.fontsource(),
+      weights: [400],
+      styles: ['normal'],
+      subsets: ['latin'],
+    }]
+  },
   integrations: [compress(), icon()]
 });
