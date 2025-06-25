@@ -45,7 +45,14 @@ export default defineConfig({
       weights: [400],
       styles: ['normal'],
       subsets: ['latin'],
-    }]
+    }, {
+      name: 'Inter',
+      cssVariable: '--font-inter',
+      provider: fontProviders.fontsource(),
+      weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      styles: ['normal'],
+      subsets: ['latin'],
+    }],
   },
   integrations: [compress(), icon()]
 });

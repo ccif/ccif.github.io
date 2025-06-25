@@ -8,10 +8,10 @@ import { Icon } from 'astro-icon/components';
   <main class="max-w-3xl mx-auto p-4">
     <article class="prose text-base-content max-w-none mt-8 mb-8 font-serif">
       <header class="relative">
-        <h1 class="mb-0">Jason Chou</h1>
-        <div class="flex justify-between mb-4">
+        <h1 class="mb-1 tracking-wide font-inter font-light text-gray-700">Jason Chou</h1>
+        <div class="flex justify-between mb-8">
           <div class="inline-flex items-center">
-            <Icon name="solar:mailbox-linear" class="h-5 w-5 mr-2" />
+            <Icon name="solar:mailbox-linear" class="h-5 w-5 mr-1" />
             <a href="mailto:me@jasonchou.dev" class="font-mono text-sm">me@jasonchou.dev</a>
           </div>
         </div>
@@ -21,8 +21,21 @@ import { Icon } from 'astro-icon/components';
         </div>
       </header>
       <p>Hi! I'm a software engineer currently building <a href="https://piecewise.fit">Piecewise</a>, a closet app designed around swapping clothes with others.</p>
-      <p>When I'm not coding, I'm probably either bouldering in Chelsea, poring over the pictures in Tufte, or attempting to variegate my Caladiums.</p>
+      <p>When I'm not coding, you can find me either in Chelsea at my favorite bouldering gym, on my couch poring over the pictures in <a href="https://www.edwardtufte.com/book/visual-explanations-images-and-quantities-evidence-and-narrative">Tufte</a>, or somewhere in New York trying to find new plants to add to my collection.</p>
     </article>
     <Resume />
+    <footer class="mt-8 text-center">
+      <p class="mb-1">Let's work together! I'm always reachable at</p>
+      <div class="inline-flex items-center prose">
+        <Icon name="solar:mailbox-linear" class="h-5 w-5 mr-1" />
+        <a href="mailto:me@jasonchou.dev" class="font-mono text-sm">me@jasonchou.dev</a>
+      </div>
+    </footer>
   </main>
 </Layout>
+
+<style>
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+</style>
