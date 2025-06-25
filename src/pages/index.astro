@@ -5,26 +5,28 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <Layout>
-  <main class="max-w-3xl mx-auto p-4">
-    <article class="prose text-base-content max-w-none mt-8 mb-8 font-serif">
-      <header class="relative">
-        <h1 class="mb-1 tracking-wide font-inter font-light text-gray-700">Jason Chou</h1>
-        <div class="flex justify-between mb-8">
-          <div class="inline-flex items-center">
-            <Icon name="solar:mailbox-linear" class="h-5 w-5 mr-1" />
-            <a href="mailto:me@jasonchou.dev" class="font-mono text-sm">me@jasonchou.dev</a>
-          </div>
+  <main class="max-w-3xl mx-auto px-4 py-12 space-y-8">
+    <header class="prose text-base-content max-w-none font-serif relative">
+      <h1 class="mb-1 tracking-wide font-inter font-light text-gray-700">Jason Chou</h1>
+      <div class="flex justify-between mb-8">
+        <div class="inline-flex items-center">
+          <Icon name="solar:mailbox-linear" class="h-5 w-5 mr-1" />
+          <a href="mailto:me@jasonchou.dev" class="font-mono text-sm">me@jasonchou.dev</a>
         </div>
-        <div class="absolute right-0 bottom-0 flex items-center space-x-1">
-          <a href="https://www.github.com/ccif/"><Icon name="streamline-logos:github-logo-2-block" class="h-7 w-7" /></a>
-          <a href="https://www.linkedin.com/in/jason-chou-b8690917a/"><Icon name="streamline-logos:linkedin-logo-block" class="h-7 w-7" /></a>
-        </div>
-      </header>
+      </div>
+      <div class="absolute right-0 bottom-0 flex items-center space-x-1">
+        <a href="https://www.github.com/ccif/"><Icon name="streamline-logos:github-logo-2-block" class="h-7 w-7" /></a>
+        <a href="https://www.linkedin.com/in/jason-chou-b8690917a/"><Icon name="streamline-logos:linkedin-logo-block" class="h-7 w-7" /></a>
+      </div>
+    </header>
+    <article class="prose text-base-content max-w-none font-serif animate-fade-in">
       <p>Hi! I'm a software engineer currently building <a href="https://piecewise.fit">Piecewise</a>, a closet app designed around swapping clothes with others.</p>
       <p>When I'm not coding, you can find me either in Chelsea at my favorite bouldering gym, on my couch poring over the pictures in <a href="https://www.edwardtufte.com/book/visual-explanations-images-and-quantities-evidence-and-narrative">Tufte</a>, or somewhere in New York trying to find new plants to add to my collection.</p>
     </article>
-    <Resume />
-    <footer class="my-8 text-center">
+    <div class="animate-fade-in-delayed">
+      <Resume />
+    </div>
+    <footer class="text-center animate-fade-in-delayed-footer">
       <p class="mb-1">Let's work together! I'm always reachable at</p>
       <div class="inline-flex items-center prose">
         <Icon name="solar:mailbox-linear" class="h-5 w-5 mr-1" />
@@ -37,5 +39,30 @@ import { Icon } from 'astro-icon/components';
 <style>
   .font-inter {
     font-family: var(--font-inter);
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+  
+  .animate-fade-in-delayed {
+    animation: fade-in 0.4s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-delayed-footer {
+    animation: fade-in 0.4s ease-out 0.5s forwards;
+    opacity: 0;
   }
 </style>
