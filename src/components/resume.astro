@@ -58,13 +58,9 @@ const { name, contact, experience, projects, skills, education } = resumeData;
             ))}
           </ul>
         </div>
-        <hr />
+        {index < experience.length - 1 && <hr />}
       </li>
     ))}
-    <li>
-      <hr />
-      <div class="timeline-middle"><Icon name="solar:menu-dots-linear" class="h-5 w-5 text-gray-300" stroke-width="1.5" /></div>
-    </li>
   </ul>
 </div>
 
