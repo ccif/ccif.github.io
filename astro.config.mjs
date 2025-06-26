@@ -3,6 +3,8 @@ import { exec } from 'child_process';
 import tailwindcss from '@tailwindcss/vite';
 import compress from 'astro-compress';
 import icon from 'astro-icon';
+import svelte from '@astrojs/svelte';
+import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   site: 'https://ccif.github.io',
@@ -54,5 +56,10 @@ export default defineConfig({
       subsets: ['latin'],
     }],
   },
-  integrations: [compress(), icon()]
+  integrations: [
+    compress(),   // Post-processing
+    icon(),       // Lightweight injection
+    svelte(),     // Enables Svelte components
+    mdx()         // MDX should go last unless another plugin needs to modify MDX behavior directly
+  ]
 });
