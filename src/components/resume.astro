@@ -17,16 +17,16 @@ const { name, contact, experience, projects, skills, education } = resumeData;
     <a 
       href="/jason-chou-resume.pdf" 
       download="jason-chou-resume.pdf"
-      class="btn btn-square"
+      class="btn btn-square bg-primary-content"
     >
-      <Icon name="solar:download-minimalistic-line-duotone" class="h-5 w-5" />
+      <Icon name="solar:download-minimalistic-line-duotone" class="h-5 w-5 text-primary" />
     </a>
   </div>
 
   <ul class="timeline timeline-vertical timeline-compact timeline-snap-icon p-4">
     {experience.map((exp: any, index: number) => (
       <li>
-        {index > 0 && <hr />}
+        {index > 0 && <hr class="bg-primary-content" />}
         <div class="timeline-start ml-2">
           <div class="font-bold">{exp.title}</div>
         </div>
@@ -58,7 +58,7 @@ const { name, contact, experience, projects, skills, education } = resumeData;
             ))}
           </ul>
         </div>
-        {index < experience.length - 1 && <hr />}
+        {index < experience.length - 1 && <hr class="bg-primary-content" />}
       </li>
     ))}
   </ul>
