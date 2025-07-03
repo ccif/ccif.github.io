@@ -5,9 +5,15 @@ import compress from 'astro-compress';
 import icon from 'astro-icon';
 import svelte from '@astrojs/svelte';
 import mdx from '@astrojs/mdx';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
   site: 'https://ccif.github.io',
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
   vite: {
     plugins: [
       tailwindcss(),
