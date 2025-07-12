@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "linear-server": {
+      "type": "stdio",
+      "command": "https://mcp.linear.app/sse",
+      "args": [],
+      "env": {}
+    }
+  }
+}
