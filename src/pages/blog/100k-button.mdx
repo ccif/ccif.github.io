@@ -1,0 +1,35 @@
+---
+layout: '@layouts/layout.astro'
+title: 'Random Person Problem - Hypergeometric Distribution'
+date: '2025-07-15'
+---
+
+import HypergeometricChart from '@components/HypergeometricChart.svelte';
+
+<main class="container mx-auto px-4 pt-16 pb-32 max-w-3xl">
+  <article class="prose max-w-none prose-p:font-source-sans-3">
+
+# $100k Button
+
+<div class="w-full md:w-3/4 mx-auto my-6">
+![Two cents screenshot](/public/DDB12DCD-C856-487B-B470-BCAF2A77F5E5.jpeg)
+</div>
+
+This poll got me wondering: if we're able to hit the button as many times as we want, what are the odds of killing someone I know? Is there an optimal number of presses to stop at?
+
+The underlying problem is sampling without replacement from a finite population containing exactly two types of objects: either people I care about or people I don't. This can be represented as a hypergeometric distribution. 
+
+Given a population of `N` items where `s` items belong to a set S, what's the probability that at least one of the `s` items from S appears when we randomly sample `k` items without replacement?
+
+$$
+P(X \geq 1) = 1 - P(X = 0) = 1 - \frac{\binom{N-s}{k}}{\binom{N}{k}}
+$$
+  
+<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg my-8 overflow-x-auto mx-auto">
+  <HypergeometricChart client:load />
+</div>
+
+Seems like it's pretty hard for me to accidentally kill someone I know. I don't think it's unreasonable to hit the button thousands or even tens of thousands of times. Probability would be on my side.
+
+  </article>
+</main>
