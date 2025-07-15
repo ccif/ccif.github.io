@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import * as d3 from 'd3';
   
   export let N = 8000000000; // Population size
@@ -191,9 +191,18 @@
       return;
     }
     
-    // Create SVG
+    // Wait for DOM updates to complete
+    await tick();
+    
+    // Create SVG with proper error handling
     try {
-      svg = d3.select(chartContainer)
+      const selection = d3.select(chartContainer);
+      if (selection.empty()) {
+        console.warn('Chart container selection failed');
+        return;
+      }
+      
+      svg = selection
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
