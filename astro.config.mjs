@@ -65,7 +65,7 @@ export default defineConfig({
   integrations: [
     compress(),   // Post-processing
     icon(),       // Lightweight injection
+    mdx(),        // MDX should go last unless another plugin needs to modify MDX behavior directly
     svelte(),     // Enables Svelte components
-    mdx()         // MDX should go last unless another plugin needs to modify MDX behavior directly
   ]
 });
