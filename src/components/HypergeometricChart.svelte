@@ -92,14 +92,19 @@
   
   // Redraw method for tweaking numerical calculations
   async function redrawChart() {
-    if (!svg) return;
+    if (!svg || !svg.node()) return;
     
     isCalculating = true;
     const data = await generateData();
     isCalculating = false;
     
     // Clear previous chart
-    svg.selectAll("*").remove();
+    try {
+      svg.selectAll("*").remove();
+    } catch (e) {
+      console.warn('Chart clear failed:', e);
+      return;
+    }
     
     // Create scales
     const xScale = d3.scaleLinear()
@@ -180,15 +185,25 @@
   }
   
   onMount(async () => {
-    // Create SVG
-    svg = d3.select(chartContainer)
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`);
+    // Ensure chartContainer exists before proceeding
+    if (!chartContainer) {
+      console.warn('Chart container not available');
+      return;
+    }
     
-    await redrawChart();
+    // Create SVG
+    try {
+      svg = d3.select(chartContainer)
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+      
+      await redrawChart();
+    } catch (e) {
+      console.error('SVG creation failed:', e);
+    }
   });
   
   // Reactive redraw when parameters change
