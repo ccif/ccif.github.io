@@ -13,19 +13,19 @@ experience:
     title: "Senior Software Engineer"
     dates: "June 2021 - March 2025"
     bullets:
-      - "Led the implementation of a C#-based microservice scaling solution for processing documents that reduced SQL deadlock bottlenecks, increased throughput by 100x, and prevented enterprise contract churn."
+      - "Architected a C#-based microservice scaling solution for processing documents that reduced SQL deadlock bottlenecks, increased throughput by 100x, and prevented enterprise contract churn."
       - "Migrated legacy Windows computer vision services to containerized Linux deployments, reducing deployment time by 91% and enabling horizontal auto-scaling across cloud environments."
       - "Led the adoption of distributed observability using OpenTelemetry, enabling the team to debug performance bottlenecks across microservices and reducing mean time to resolution (MTTR)."
       - "Integrated flexible authentication layers (OAuth, JWT, and custom schemes for enterprise clients) in PII-sensitive environments to meet regulatory compliance standards."
-      - "Mentored junior engineers and supported their ramp-up through structured code reviews to becoming their own independent contributors and system owners."
+      - "Mentored 5 junior engineers and supported their ramp-up through structured code reviews to becoming their own independent contributors and system owners."
 
   - company: "True AI"
     location: "New York, NY"
     title: "Software Engineer"
     dates: "June 2019 – May 2021"
     bullets:
-      - "Led lift-and-shift cloud migration strategy to AWS and Azure, improving system availability and disaster recovery capabilities."
       - "Architected front-end migration from desktop application to React SPA, eliminating client-side installations and increasing concurrent user capacity."
+      - "Orchestrated lift-and-shift cloud migration strategy to AWS and Azure, improving system availability and disaster recovery capabilities."
       - "Resolved critical concurrency issues in C# WPF-based human-in-the-loop platform by implementing thread-safe patterns and async/await operations."
 
   - company: "CCNY AquaSim"
@@ -57,7 +57,7 @@ skills:
   - category: "Frameworks"
     items: ".NET Core, React, Node.js, FastAPI, Airflow, Dagster"
   - category: "Cloud"
-    items: "AWS (EC2, RDS, Lambda, EFS, FSx, CloudFormation), Azure, Google Cloud"
+    items: "AWS (EC2, RDS, EKS, Lambda, FSx, CloudFormation), Azure, Google Cloud"
   - category: "Technologies"
     items: "REST, SQL, RabbitMQ, OpenTelemetry, Docker, Kubernetes, Terraform, Artifactory, Helm, gRPC, GitHub Actions, Jenkins"
 
