@@ -59,7 +59,7 @@ skills:
   - category: "Cloud"
     items: "AWS (EC2, RDS, EKS, Lambda, FSx, CloudFormation), Azure, Google Cloud"
   - category: "Technologies"
-    items: "REST, SQL, RabbitMQ, OpenTelemetry, Docker, Kubernetes, Terraform, Artifactory, Helm, gRPC, GitHub Actions, Jenkins"
+    items: "SQL, RabbitMQ, OpenTelemetry, Docker, Kubernetes, Terraform, Artifactory, Helm, gRPC, GitHub Actions, Jenkins"
 
 education:
   - school: "City College of New York"
