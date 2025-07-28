@@ -19,7 +19,7 @@ experience:
       - "Integrated flexible authentication layers (OAuth, JWT, and custom schemes for enterprise clients) in PII-sensitive environments to meet regulatory compliance standards."
       - "Mentored 5 junior engineers and supported their ramp-up through structured code reviews to becoming their own independent contributors and system owners."
 
-  - company: "True AI"
+  - company: "TRUE AI"
     location: "New York, NY"
     title: "Software Engineer"
     dates: "June 2019 – May 2021"
